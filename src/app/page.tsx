@@ -8,18 +8,18 @@ export default function Home() {
   return (
     <main className="flex-1 overflow-x-hidden">
       {/* Hero */}
-      <section className="relative flex min-h-[100svh] items-end justify-center overflow-hidden pb-16 pt-0 sm:pb-20">
+      <section className="relative min-h-[100svh] overflow-hidden">
         <Image
           src={wedding.heroImage}
           alt={wedding.namesDisplay}
           fill
           priority
-          className="object-cover object-[center_30%] sm:object-center"
+          className="object-cover object-top"
           sizes="100vw"
         />
-        <div className="hero-veil absolute inset-0 z-[1]" />
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-transparent to-night/85" />
         <div className="film-grain z-[2]" />
-        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 pb-4 text-center">
+        <div className="absolute inset-x-0 bottom-0 z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 pb-14 pt-32 text-center sm:pb-16">
           <p className="animate-fade-up text-[11px] uppercase tracking-[0.5em] text-champagne sm:text-xs">
             {wedding.tagline}
           </p>
