@@ -32,8 +32,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${wedding.namesDisplay} | Nos casamos`,
-  description: wedding.inviteBody,
+  title: `${wedding.namesDisplay} | Nuestra boda`,
+  description: `${wedding.inviteLead} ${wedding.inviteBody}`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

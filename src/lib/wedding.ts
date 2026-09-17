@@ -1,48 +1,46 @@
 /**
- * Datos de la boda de tu hermano.
- * Completa esto y reemplaza las fotos en /public/media/couple/
+ * Invitación — Daniel & Manuela
+ * Matrimonio cristiano · 26.12.2026
  */
 export const wedding = {
   groom: "Daniel",
   bride: "Manuela",
-  /** Cómo se leen los nombres en el hero */
   namesDisplay: "Daniel & Manuela",
 
-  tagline: "Nos casamos",
-  inviteLead: "Porque haces parte de nuestra historia",
+  tagline: "Con cariño",
+  sectionTitle: "Nuestra boda",
+
+  inviteLead: "El mañana vendrá acompañado de las promesas de Dios…",
   inviteBody:
-    "Con mucha alegría te invitamos a celebrar uno de los días más importantes de nuestras vidas.",
+    "Y queremos que hagas parte del cumplimiento de una de ellas.",
 
-  // TODO: completar con los datos reales de la boda
-  dateISO: "2026-12-12T17:00:00-05:00",
-  dateLabel: "Fecha por confirmar",
-  dateShort: "Pronto",
-  timeLabel: "Hora por confirmar",
+  dateISO: "2026-12-26T16:00:00-05:00",
+  dateLabel: "26 · Diciembre · 2026",
+  dateShort: "26.12.26",
+  timeLabel: "4:00 PM",
 
-  venue: "Lugar por confirmar",
-  venueCity: "",
+  venue: "2 km Vía al aeropuerto",
+  venueCity: "Autopista Medellín – Bogotá",
   mapsUrl: "",
 
-  dressCode: "Traje formal",
-  giftNote: "Tu presencia es el mejor regalo",
-  rsvpDeadline: "Confirmar asistencia con anticipación",
+  dressCode: "Dress code — Formal",
+  giftNote: "Lluvia de sobres",
+  rsvpDeadline: "Confirma tu asistencia",
 
-  verseRef: "",
-  verseText: "",
-
-  gallery: [
-    { src: "/media/couple/gallery-1.jpg", caption: "Daniel & Manuela" },
-    { src: "/media/couple/gallery-2.jpg", caption: "Juntos" },
-    { src: "/media/couple/gallery-3.jpg", caption: "Este día" },
-    { src: "/media/couple/gallery-4.jpg", caption: "Promesa" },
-    { src: "/media/couple/gallery-5.jpg", caption: "Mirada" },
-    { src: "/media/couple/gallery-6.jpg", caption: "Para siempre" },
-  ] as const,
+  verseRef: "Colosenses 3:14",
+  verseText:
+    "Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto",
 
   heroImage: "/media/couple/hero-portrait.jpg",
-  heroImageDesktop: "/media/couple/hero.jpg",
-  storyImage: "/media/couple/hero.jpg",
-  closingImage: "/media/couple/hero.jpg",
+  heroImageDesktop: "/media/couple/hero-wide.jpg",
+
+  photos: {
+    doorway: "/media/couple/doorway.jpg",
+    hands: "/media/couple/hands.jpg",
+    balcony: "/media/couple/balcony.jpg",
+    mural: "/media/couple/mural.jpg",
+    stairs: "/media/couple/stairs.jpg",
+  },
 } as const;
 
 export type WeddingConfig = typeof wedding;
