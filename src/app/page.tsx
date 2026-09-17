@@ -97,21 +97,31 @@ export default function Home() {
         <div className="absolute inset-0 bg-night/15" />
       </section>
 
-      {/* Nuestra boda — detalles */}
-      <section
-        id="detalles"
-        className="relative flex min-h-[100svh] items-center overflow-hidden py-24"
-      >
+      {/* Foto balcón — pareja bien visible */}
+      <section className="relative min-h-[75svh] overflow-hidden sm:min-h-[85svh]">
         <Image
           src={wedding.photos.balcony}
-          alt=""
+          alt="Daniel y Manuela en el balcón"
           fill
           unoptimized
-          className="object-cover object-[center_30%]"
+          className="object-cover object-[center_42%] sm:object-[center_40%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/65" />
-        <div className="relative z-10 mx-auto w-full max-w-xl px-6 text-center text-ivory">
+      </section>
+
+      {/* Nuestra boda — detalles (sin tapar la foto) */}
+      <section
+        id="detalles"
+        className="relative overflow-hidden bg-night px-6 py-24 sm:py-28"
+      >
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 70% 20%, rgba(196,165,116,0.08), transparent 50%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto w-full max-w-xl text-center text-ivory">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
               {wedding.sectionTitle}
