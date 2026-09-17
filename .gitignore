@@ -42,3 +42,4 @@ next-env.d.ts
 data/rsvps.json
 .ref-screenshots/
 test_*.webp
+*.webp
