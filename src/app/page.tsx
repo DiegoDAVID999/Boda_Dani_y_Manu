@@ -159,7 +159,7 @@ export default function Home() {
               Momentos
             </h2>
             <p className="mt-4 text-sm text-ivory/55">
-              Aquí vivirán las fotos de tu hermano y ella
+              Daniel y Manuela
             </p>
           </div>
         </Reveal>
