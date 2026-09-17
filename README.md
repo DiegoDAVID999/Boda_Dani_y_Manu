@@ -25,4 +25,5 @@ Las confirmaciones se guardan en `data/rsvps.json` (se crea al primer envío).
 ## Personalizar
 
 Edita textos y fechas en `src/app/page.tsx` y `src/components/countdown.tsx`.  
-Cambia fotos en `public/media/`.
+Fotos de la pareja en `public/media/` (`couple-*.jpg` y `video.mp4`).
+Las flores sepia (`accent-flowers-*.jpg`) son solo acento visual de la muestra.

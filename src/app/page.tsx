@@ -5,17 +5,40 @@ import { RsvpForm } from "@/components/rsvp-form";
 
 const MAPS_URL = "https://maps.app.goo.gl/cPcvdsgNfYtfwREB8?g_st=ic";
 
+const gallery = [
+  {
+    src: "/media/couple-hero.jpg",
+    alt: "Mateo tocando la guitarra para Vanessa",
+    caption: "La serenata",
+  },
+  {
+    src: "/media/couple-neon.jpg",
+    alt: "Mateo y Vanessa en su celebración",
+    caption: "Juntos",
+  },
+  {
+    src: "/media/couple-roses.jpg",
+    alt: "Vanessa sonriendo junto a Mateo",
+    caption: "Esa sonrisa",
+  },
+  {
+    src: "/media/couple-moment-2.jpg",
+    alt: "Un momento de la propuesta",
+    caption: "El momento",
+  },
+];
+
 export default function Home() {
   return (
     <main className="flex-1 overflow-x-hidden">
-      {/* Hero */}
+      {/* Hero — fotos de la pareja */}
       <section className="relative flex min-h-[100svh] items-end justify-center overflow-hidden pb-16 pt-24 sm:items-center sm:pb-0 sm:pt-0">
         <Image
-          src="/media/hero.jpg"
+          src="/media/couple-hero.jpg"
           alt="Mateo y Vanessa"
           fill
           priority
-          className="animate-ken-burns object-cover object-[center_20%]"
+          className="animate-ken-burns object-cover object-center"
           sizes="100vw"
         />
         <div className="photo-veil absolute inset-0" />
@@ -41,16 +64,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Invitation */}
+      {/* Invitation over couple photo */}
       <section
         id="nuestra-boda"
         className="relative flex min-h-[100svh] items-center overflow-hidden py-24"
       >
         <Image
-          src="/media/photo4.jpg"
+          src="/media/couple-neon.jpg"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover object-[center_30%]"
           sizes="100vw"
         />
         <div className="section-veil absolute inset-0" />
@@ -112,8 +135,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Video / moment */}
-      <section className="relative bg-ink py-0">
+      {/* Video */}
+      <section className="relative bg-ink">
         <div className="relative mx-auto aspect-[3/2] w-full max-w-5xl overflow-hidden sm:aspect-[16/9]">
           <video
             className="h-full w-full object-cover"
@@ -121,7 +144,7 @@ export default function Home() {
             muted
             loop
             playsInline
-            poster="/media/poster.jpg"
+            poster="/media/couple-guitar.jpg"
             aria-label="Momento de Mateo y Vanessa"
           >
             <source src="/media/video.mp4" type="video/mp4" />
@@ -130,22 +153,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photo moment */}
-      <section className="relative min-h-[70svh] overflow-hidden">
+      {/* Galería con las fotos nuevas de la pareja */}
+      <section id="fotos" className="bg-cream px-4 py-20 sm:px-8 sm:py-28">
+        <Reveal>
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="font-serif text-xs uppercase tracking-[0.4em] text-ink/60">
+              Nuestros momentos
+            </p>
+            <h2 className="mt-4 font-display text-5xl text-ink sm:text-6xl">
+              Las fotos
+            </h2>
+          </div>
+        </Reveal>
+
+        <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 sm:gap-5">
+          {gallery.map((photo, i) => (
+            <Reveal key={photo.src} delayMs={i * 80}>
+              <figure className="group relative overflow-hidden">
+                <div
+                  className={`relative w-full overflow-hidden ${
+                    i % 3 === 0 ? "aspect-[4/3]" : "aspect-[3/4] sm:aspect-[4/5]"
+                  }`}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent opacity-80" />
+                  <figcaption className="absolute bottom-0 left-0 p-5 font-serif text-sm uppercase tracking-[0.25em] text-cream">
+                    {photo.caption}
+                  </figcaption>
+                </div>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Full-bleed couple portrait */}
+      <section className="relative min-h-[85svh] overflow-hidden">
         <Image
-          src="/media/photo2.jpg"
-          alt="Mateo y Vanessa juntos"
+          src="/media/couple-roses.jpg"
+          alt="Mateo y Vanessa"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-ink/25" />
+        <div className="absolute inset-0 bg-ink/20" />
       </section>
 
       {/* Verse */}
       <section className="relative flex min-h-[80svh] items-center overflow-hidden py-24">
         <Image
-          src="/media/photo3.jpg"
+          src="/media/couple-moment-1.jpg"
           alt=""
           fill
           className="object-cover"
@@ -203,10 +266,10 @@ export default function Home() {
       {/* Closing */}
       <section className="relative flex min-h-[60svh] items-center justify-center overflow-hidden py-20">
         <Image
-          src="/media/hero.jpg"
+          src="/media/couple-neon.jpg"
           alt=""
           fill
-          className="object-cover object-[center_30%]"
+          className="object-cover object-[center_25%]"
           sizes="100vw"
         />
         <div className="photo-veil absolute inset-0" />
