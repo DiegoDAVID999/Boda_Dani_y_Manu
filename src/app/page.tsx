@@ -7,35 +7,35 @@ import { wedding } from "@/lib/wedding";
 export default function Home() {
   return (
     <main className="flex-1 overflow-x-hidden">
-      {/* Hero */}
-      <section className="relative min-h-[100svh] overflow-hidden">
-        <Image
-          src={wedding.heroImage}
-          alt={wedding.namesDisplay}
-          fill
-          priority
-          className="object-cover object-top"
-          sizes="100vw"
-        />
-        <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-transparent to-night/85" />
-        <div className="film-grain z-[2]" />
-        <div className="absolute inset-x-0 bottom-0 z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 pb-14 pt-32 text-center sm:pb-16">
+      {/* Hero — foto visible arriba, texto abajo */}
+      <section className="relative min-h-[100svh] bg-night">
+        <div className="relative h-[58svh] w-full overflow-hidden sm:h-[62svh]">
+          <Image
+            src={wedding.heroImage}
+            alt={wedding.namesDisplay}
+            fill
+            priority
+            className="object-cover object-[center_22%]"
+            sizes="100vw"
+          />
+        </div>
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 py-10 text-center sm:py-12">
           <p className="animate-fade-up text-[11px] uppercase tracking-[0.5em] text-champagne sm:text-xs">
             {wedding.tagline}
           </p>
           <div className="animate-line gold-rule mt-5" />
-          <h1 className="animate-fade-up-delay mt-4 font-script text-[clamp(3.8rem,16vw,8rem)] leading-[0.92] text-ivory drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]">
+          <h1 className="animate-fade-up-delay mt-4 font-script text-[clamp(3.6rem,14vw,7.5rem)] leading-[0.92] text-ivory">
             {wedding.namesDisplay}
           </h1>
-          <p className="animate-fade-up-delay-2 mt-5 font-display text-base tracking-[0.35em] text-ivory/85 sm:text-lg">
+          <p className="animate-fade-up-delay-2 mt-5 font-display text-base tracking-[0.35em] text-ivory/80 sm:text-lg">
             {wedding.dateLabel}
           </p>
-          <div className="animate-fade-up-delay-2 mt-10 w-full">
+          <div className="animate-fade-up-delay-2 mt-8 w-full">
             <Countdown />
           </div>
           <a
             href="#historia"
-            className="animate-fade-up-delay-2 mt-10 text-[11px] uppercase tracking-[0.35em] text-ivory/75 transition hover:text-champagne"
+            className="animate-fade-up-delay-2 mt-8 text-[11px] uppercase tracking-[0.35em] text-ivory/70 transition hover:text-champagne"
           >
             Descubrir la invitación
           </a>
