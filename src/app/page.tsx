@@ -16,7 +16,6 @@ export default function Home() {
           priority
           className="object-cover object-[center_30%] sm:object-center"
           sizes="100vw"
-          quality={90}
         />
         <div className="hero-veil absolute inset-0 z-[1]" />
         <div className="film-grain z-[2]" />
