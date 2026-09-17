@@ -39,9 +39,9 @@ export const wedding = {
     { src: "/media/couple/gallery-6.jpg", caption: "Para siempre" },
   ] as const,
 
-  heroImage: "/media/couple/hero.jpg",
-  storyImage: "/media/couple/gallery-2.jpg",
-  closingImage: "/media/couple/gallery-3.jpg",
+  heroImage: "/media/couple/hero-portrait.jpg",
+  storyImage: "/media/couple/hero.jpg",
+  closingImage: "/media/couple/hero.jpg",
 } as const;
 
 export type WeddingConfig = typeof wedding;

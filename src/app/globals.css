@@ -162,17 +162,18 @@
 .hero-veil {
   background: linear-gradient(
     180deg,
-    rgba(18, 25, 22, 0.25) 0%,
-    rgba(18, 25, 22, 0.35) 40%,
-    rgba(18, 25, 22, 0.82) 100%
+    rgba(18, 25, 22, 0.05) 0%,
+    rgba(18, 25, 22, 0.12) 45%,
+    rgba(18, 25, 22, 0.55) 78%,
+    rgba(18, 25, 22, 0.78) 100%
   );
 }
 
 .section-veil {
   background: linear-gradient(
     180deg,
-    rgba(18, 25, 22, 0.55) 0%,
-    rgba(18, 25, 22, 0.78) 100%
+    rgba(18, 25, 22, 0.35) 0%,
+    rgba(18, 25, 22, 0.62) 100%
   );
 }
 
