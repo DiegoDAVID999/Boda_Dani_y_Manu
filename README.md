@@ -1,8 +1,8 @@
-# Mateo & Vanessa — Invitación de boda
+# Invitación de boda — para tu hermano
 
-Sitio web de invitación inspirado en la muestra de Canva, con hero fotográfico, detalles del evento, momento en video, versículo y confirmación de asistencia (RSVP).
+Sitio web de invitación especial, en la misma línea elegante y fotográfica de la muestra, pero con identidad propia (**noche de jardín**: verdes profundos, marfil y champagne).
 
-## Cómo correrlo
+## Cómo verla
 
 ```bash
 npm install
@@ -11,19 +11,40 @@ npm run dev -- --port 43123
 
 Abre [http://127.0.0.1:43123](http://127.0.0.1:43123).
 
-## Contenido
+## Personalizar (lo importante)
 
-- **Novios:** Mateo & Vanessa  
-- **Fecha:** 4 de septiembre de 2026 · 7:00 PM  
-- **Lugar:** Club El Zarzal, Copacabana  
-- **Código de vestimenta:** Traje formal  
-- **Regalo:** Lluvia de sobres  
-- **RSVP:** hasta el 31 de julio  
+### 1. Datos de la pareja
 
-Las confirmaciones se guardan en `data/rsvps.json` (se crea al primer envío).
+Edita `src/lib/wedding.ts`:
 
-## Personalizar
+- Nombres de tu hermano y ella
+- Fecha, hora, lugar y enlace de Maps
+- Código de vestimenta / nota de regalo
+- Texto de invitación y (opcional) versículo
 
-Edita textos y fechas en `src/app/page.tsx` y `src/components/countdown.tsx`.  
-Fotos de la pareja en `public/media/` (`couple-*.jpg` y `video.mp4`).
-Las flores sepia (`accent-flowers-*.jpg`) son solo acento visual de la muestra.
+### 2. Sus fotos
+
+Reemplaza estos archivos (mismo nombre):
+
+```
+public/media/couple/hero.jpg          ← foto principal del hero
+public/media/couple/gallery-1.jpg
+public/media/couple/gallery-2.jpg
+...
+public/media/couple/gallery-6.jpg
+```
+
+Ahora hay placeholders. En cuanto subas las fotos reales, la invitación cobra vida.
+
+### 3. Confirmaciones (RSVP)
+
+Las respuestas se guardan en `data/rsvps.json`.
+
+## Qué incluye
+
+- Hero cinematográfico + cuenta regresiva
+- Historia / invitación
+- Detalles del evento
+- Galería de momentos
+- Formulario de confirmación
+- Cierre emotivo

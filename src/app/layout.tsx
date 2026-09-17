@@ -1,23 +1,29 @@
 import type { Metadata } from "next";
-import { Alice, Pinyon_Script, Quattrocento, Geist_Mono } from "next/font/google";
+import {
+  Cormorant_Garamond,
+  Great_Vibes,
+  Lora,
+  Geist_Mono,
+} from "next/font/google";
+import { wedding } from "@/lib/wedding";
 import "./globals.css";
 
-const alice = Alice({
-  weight: "400",
+const cormorant = Cormorant_Garamond({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
-  variable: "--font-alice",
+  variable: "--font-cormorant",
 });
 
-const pinyon = Pinyon_Script({
+const greatVibes = Great_Vibes({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-script",
+  variable: "--font-great-vibes",
 });
 
-const quattrocento = Quattrocento({
-  weight: "400",
+const lora = Lora({
+  weight: ["400", "500"],
   subsets: ["latin"],
-  variable: "--font-quattro",
+  variable: "--font-lora",
 });
 
 const geistMono = Geist_Mono({
@@ -26,24 +32,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mateo & Vanessa | Nos casamos",
-  description:
-    "Te invitamos a celebrar con nosotros el 4 de septiembre de 2026 en Club El Zarzal, Copacabana.",
-  openGraph: {
-    title: "Mateo & Vanessa | Nos casamos",
-    description:
-      "Porque haces parte de nuestra historia… te invitamos a uno de los días más importantes de nuestra vida.",
-    images: ["/media/hero.jpg"],
-  },
+  title: `${wedding.namesDisplay} | Nos casamos`,
+  description: wedding.inviteBody,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${alice.variable} ${pinyon.variable} ${quattrocento.variable} ${geistMono.variable} h-full`}
+      className={`${cormorant.variable} ${greatVibes.variable} ${lora.variable} ${geistMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col font-body">{children}</body>
+      <body className="flex min-h-full flex-col font-body">{children}</body>
     </html>
   );
 }

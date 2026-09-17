@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { wedding } from "@/lib/wedding";
 
-const WEDDING_DATE = new Date("2026-09-04T19:00:00-05:00");
+const WEDDING_DATE = new Date(wedding.dateISO);
 
 type TimeLeft = {
   days: number;
@@ -13,11 +14,12 @@ type TimeLeft = {
 
 function getTimeLeft(): TimeLeft {
   const diff = Math.max(0, WEDDING_DATE.getTime() - Date.now());
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  return { days, hours, minutes, seconds };
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
 }
 
 export function Countdown() {
@@ -30,13 +32,7 @@ export function Countdown() {
   }, []);
 
   if (!time) {
-    return (
-      <div className="mx-auto grid max-w-md grid-cols-4 gap-3 opacity-0" aria-hidden>
-        {[0, 1, 2, 3].map((i) => (
-          <div key={i} className="h-16" />
-        ))}
-      </div>
-    );
+    return <div className="mx-auto h-16 max-w-lg opacity-0" aria-hidden />;
   }
 
   const items = [
@@ -48,15 +44,15 @@ export function Countdown() {
 
   return (
     <div
-      className="mx-auto grid max-w-md grid-cols-4 gap-2 sm:gap-4"
-      aria-label="Cuenta regresiva para la boda"
+      className="mx-auto grid max-w-lg grid-cols-4 gap-3 sm:gap-6"
+      aria-label="Cuenta regresiva"
     >
       {items.map((item) => (
         <div key={item.label} className="text-center">
-          <div className="font-serif text-2xl tracking-wide text-cream sm:text-3xl">
+          <div className="font-display text-3xl font-medium tracking-wide text-ivory sm:text-4xl">
             {String(item.value).padStart(2, "0")}
           </div>
-          <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-cream/70 sm:text-xs">
+          <div className="mt-1 text-[10px] uppercase tracking-[0.28em] text-ivory/55">
             {item.label}
           </div>
         </div>

@@ -12,13 +12,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { wedding } from "@/lib/wedding";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 export function RsvpForm() {
   const [status, setStatus] = useState<Status>("idle");
-  const [attendance, setAttendance] = useState<string>("");
-  const [guests, setGuests] = useState<string>("1");
+  const [attendance, setAttendance] = useState("");
+  const [guests, setGuests] = useState("1");
   const [errorMsg, setErrorMsg] = useState("");
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -50,11 +51,7 @@ export function RsvpForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
-      if (!res.ok) {
-        throw new Error("No se pudo guardar la confirmación");
-      }
-
+      if (!res.ok) throw new Error("fail");
       setStatus("success");
       form.reset();
       setAttendance("");
@@ -68,15 +65,17 @@ export function RsvpForm() {
   if (status === "success") {
     return (
       <div className="mx-auto max-w-lg text-center">
-        <p className="font-display text-4xl text-cream sm:text-5xl">¡Gracias!</p>
-        <p className="mt-4 font-serif text-lg text-cream/90">
-          Recibimos tu confirmación. Nos hace muy felices compartir este día
-          contigo.
+        <p className="font-script text-5xl text-champagne sm:text-6xl">
+          ¡Gracias!
+        </p>
+        <p className="mt-4 font-display text-xl text-ivory/90">
+          Recibimos tu confirmación. {wedding.groom} y {wedding.bride} están
+          felices de celebrar contigo.
         </p>
         <Button
           type="button"
           variant="outline"
-          className="mt-8 border-cream/40 bg-transparent text-cream hover:bg-cream/10 hover:text-cream"
+          className="mt-8 border-champagne/40 bg-transparent text-ivory hover:bg-ivory/10 hover:text-ivory"
           onClick={() => setStatus("idle")}
         >
           Enviar otra respuesta
@@ -88,7 +87,7 @@ export function RsvpForm() {
   return (
     <form onSubmit={onSubmit} className="mx-auto w-full max-w-lg space-y-5">
       <div className="space-y-2">
-        <Label htmlFor="name" className="text-cream/90">
+        <Label htmlFor="name" className="text-ivory/85">
           Nombre completo
         </Label>
         <Input
@@ -96,13 +95,13 @@ export function RsvpForm() {
           name="name"
           required
           placeholder="Tu nombre"
-          className="border-cream/30 bg-cream/10 text-cream placeholder:text-cream/45"
+          className="border-moss bg-dusk/80 text-ivory placeholder:text-ivory/40"
         />
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-cream/90">
+          <Label htmlFor="email" className="text-ivory/85">
             Correo
           </Label>
           <Input
@@ -110,31 +109,31 @@ export function RsvpForm() {
             name="email"
             type="email"
             placeholder="opcional"
-            className="border-cream/30 bg-cream/10 text-cream placeholder:text-cream/45"
+            className="border-moss bg-dusk/80 text-ivory placeholder:text-ivory/40"
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="phone" className="text-cream/90">
-            Teléfono
+          <Label htmlFor="phone" className="text-ivory/85">
+            Teléfono / WhatsApp
           </Label>
           <Input
             id="phone"
             name="phone"
             type="tel"
             placeholder="opcional"
-            className="border-cream/30 bg-cream/10 text-cream placeholder:text-cream/45"
+            className="border-moss bg-dusk/80 text-ivory placeholder:text-ivory/40"
           />
         </div>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label className="text-cream/90">¿Nos acompañas?</Label>
+          <Label className="text-ivory/85">¿Nos acompañas?</Label>
           <Select
             value={attendance || null}
             onValueChange={(value) => setAttendance(value ?? "")}
           >
-            <SelectTrigger className="w-full border-cream/30 bg-cream/10 text-cream">
+            <SelectTrigger className="w-full border-moss bg-dusk/80 text-ivory">
               <SelectValue placeholder="Selecciona" />
             </SelectTrigger>
             <SelectContent>
@@ -144,9 +143,12 @@ export function RsvpForm() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label className="text-cream/90">Número de personas</Label>
-          <Select value={guests} onValueChange={(value) => setGuests(value ?? "1")}>
-            <SelectTrigger className="w-full border-cream/30 bg-cream/10 text-cream">
+          <Label className="text-ivory/85">Número de personas</Label>
+          <Select
+            value={guests}
+            onValueChange={(value) => setGuests(value ?? "1")}
+          >
+            <SelectTrigger className="w-full border-moss bg-dusk/80 text-ivory">
               <SelectValue placeholder="1" />
             </SelectTrigger>
             <SelectContent>
@@ -161,7 +163,7 @@ export function RsvpForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message" className="text-cream/90">
+        <Label htmlFor="message" className="text-ivory/85">
           Mensaje para los novios
         </Label>
         <Textarea
@@ -169,12 +171,12 @@ export function RsvpForm() {
           name="message"
           rows={3}
           placeholder="Un deseo, un recuerdo, unas palabras…"
-          className="border-cream/30 bg-cream/10 text-cream placeholder:text-cream/45"
+          className="border-moss bg-dusk/80 text-ivory placeholder:text-ivory/40"
         />
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-ember" role="alert">
+        <p className="text-sm text-champagne" role="alert">
           {errorMsg}
         </p>
       )}
@@ -182,13 +184,13 @@ export function RsvpForm() {
       <Button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-cream text-ink hover:bg-white"
+        className="w-full bg-champagne text-night hover:bg-[#d4b88a]"
       >
         {status === "loading" ? "Enviando…" : "Confirmar asistencia"}
       </Button>
 
-      <p className="text-center text-xs uppercase tracking-[0.15em] text-cream/60">
-        Confirmar hasta el 31 de julio
+      <p className="text-center text-xs uppercase tracking-[0.18em] text-ivory/45">
+        {wedding.rsvpDeadline}
       </p>
     </form>
   );
