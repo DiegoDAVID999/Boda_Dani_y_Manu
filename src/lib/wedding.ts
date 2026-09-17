@@ -40,6 +40,7 @@ export const wedding = {
   ] as const,
 
   heroImage: "/media/couple/hero-portrait.jpg",
+  heroImageDesktop: "/media/couple/hero.jpg",
   storyImage: "/media/couple/hero.jpg",
   closingImage: "/media/couple/hero.jpg",
 } as const;
