@@ -184,18 +184,21 @@ export default function Home() {
         />
       </section>
 
-      {/* Versículo */}
-      <section className="relative flex min-h-[80svh] items-center overflow-hidden py-24">
+      {/* Foto escaleras */}
+      <section className="relative min-h-[75svh] overflow-hidden sm:min-h-[85svh]">
         <Image
           src={wedding.photos.stairs}
-          alt=""
+          alt="Daniel y Manuela"
           fill
           unoptimized
-          className="object-cover object-center"
+          className="object-cover object-[center_35%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/70" />
-        <div className="relative z-10 mx-auto max-w-2xl px-6 text-center text-ivory">
+      </section>
+
+      {/* Versículo */}
+      <section className="relative overflow-hidden bg-night px-6 py-24 sm:py-28">
+        <div className="relative z-10 mx-auto max-w-2xl text-center text-ivory">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.4em] text-champagne">
               {wedding.verseRef}
