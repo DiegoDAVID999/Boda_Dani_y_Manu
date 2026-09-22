@@ -53,39 +53,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Promesa */}
+      {/* Promesa — texto sobre foto de las manos */}
       <section
         id="promesa"
-        className="relative overflow-hidden px-6 py-24 sm:py-28"
+        className="relative flex min-h-[85svh] items-center justify-center overflow-hidden py-24 sm:min-h-[90svh]"
       >
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 0%, rgba(196,165,116,0.1), transparent 55%)",
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-2xl text-center">
-          <Reveal>
-            <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
-              Matrimonio cristiano
-            </p>
-          </Reveal>
-          <Reveal delayMs={100}>
-            <h2 className="mt-6 font-display text-[clamp(1.85rem,5vw,2.85rem)] font-medium leading-snug text-ivory">
-              {wedding.inviteLead}
-            </h2>
-          </Reveal>
-          <Reveal delayMs={200}>
-            <p className="mx-auto mt-8 max-w-lg text-lg leading-relaxed text-ivory/75">
-              {wedding.inviteBody}
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Foto manos */}
-      <section className="relative min-h-[70svh] overflow-hidden sm:min-h-[80svh]">
         <Image
           src={wedding.photos.hands}
           alt="Las manos de Daniel y Manuela"
@@ -94,7 +66,24 @@ export default function Home() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/15" />
+        <div className="absolute inset-0 bg-night/55 sm:bg-night/50" />
+        <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
+          <Reveal>
+            <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
+              Matrimonio cristiano
+            </p>
+          </Reveal>
+          <Reveal delayMs={100}>
+            <h2 className="mt-6 font-display text-[clamp(1.85rem,5vw,2.85rem)] font-medium leading-snug text-ivory drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)]">
+              {wedding.inviteLead}
+            </h2>
+          </Reveal>
+          <Reveal delayMs={200}>
+            <p className="mx-auto mt-8 max-w-lg text-lg leading-relaxed text-ivory/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)]">
+              {wedding.inviteBody}
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       {/* Foto balcón — pareja bien visible */}
