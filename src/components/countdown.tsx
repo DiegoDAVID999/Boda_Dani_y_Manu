@@ -23,13 +23,17 @@ function getTimeLeft(): TimeLeft {
 }
 
 export function Countdown() {
-  const [time, setTime] = useState<TimeLeft>(() => getTimeLeft());
+  const [time, setTime] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
     setTime(getTimeLeft());
     const id = setInterval(() => setTime(getTimeLeft()), 1000);
     return () => clearInterval(id);
   }, []);
+
+  if (!time) {
+    return <div className="mx-auto h-16 max-w-lg opacity-0" aria-hidden />;
+  }
 
   const items = [
     { label: "Días", value: time.days },
