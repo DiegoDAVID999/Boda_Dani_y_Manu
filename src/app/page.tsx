@@ -187,19 +187,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Foto doorway full */}
-      <section className="relative min-h-[70svh] overflow-hidden sm:min-h-[80svh]">
-        <Image
-          src={wedding.photos.doorway}
-          alt="Daniel y Manuela"
-          fill
-          unoptimized
-          className="object-cover object-[center_25%]"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-night/40 to-transparent" />
-      </section>
-
       {/* Cierre */}
       <section className="relative flex min-h-[55svh] items-center justify-center overflow-hidden py-20">
         <Image
