@@ -21,11 +21,13 @@ export const wedding = {
 
   venue: "2 km Vía al aeropuerto",
   venueCity: "Autopista Medellín – Bogotá",
-  mapsUrl: "",
+  /** Pega aquí el link de Google Maps que te pasaron */
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=2+km+V%C3%ADa+al+aeropuerto+autopista+Medell%C3%ADn+Bogot%C3%A1",
 
   dressCode: "Dress code — Formal",
   giftNote: "Lluvia de sobres",
-  rsvpDeadline: "Confirma tu asistencia",
+  rsvpDeadline: "Confirma tu asistencia hasta el 31 de octubre",
 
   verseRef: "Colosenses 3:14",
   verseText:
@@ -38,7 +40,9 @@ export const wedding = {
     doorway: "/media/couple/doorway.jpg",
     hands: "/media/couple/hands.jpg",
     balcony: "/media/couple/balcony.jpg",
+    balconySection: "/media/couple/balcony-section.jpg",
     mural: "/media/couple/mural.jpg",
+    muralSection: "/media/couple/mural-section.jpg",
     stairs: "/media/couple/stairs.jpg",
   },
 } as const;

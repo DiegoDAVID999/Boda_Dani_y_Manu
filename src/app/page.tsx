@@ -6,9 +6,8 @@ import { wedding } from "@/lib/wedding";
 export default function Home() {
   return (
     <main className="flex-1 overflow-x-hidden bg-night">
-      {/* HERO — estilo mockup: foto + Con cariño / nombres / fecha */}
+      {/* HERO */}
       <section className="relative flex min-h-[100svh] items-end justify-center overflow-hidden">
-        {/* Móvil */}
         <Image
           src={wedding.heroImage}
           alt={wedding.namesDisplay}
@@ -18,7 +17,6 @@ export default function Home() {
           className="object-cover object-[center_20%] lg:hidden"
           sizes="100vw"
         />
-        {/* Escritorio */}
         <Image
           src={wedding.heroImageDesktop}
           alt=""
@@ -28,7 +26,7 @@ export default function Home() {
           className="hidden object-cover object-[center_30%] lg:block"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-night via-night/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-transparent" />
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 pb-16 pt-40 text-center sm:pb-20">
           <p className="animate-fade-up text-[11px] uppercase tracking-[0.5em] text-champagne">
             {wedding.tagline}
@@ -52,7 +50,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Promesa — texto sobre foto de las manos */}
+      {/* Promesa sobre manos */}
       <section
         id="promesa"
         className="relative flex min-h-[85svh] items-center justify-center overflow-hidden py-24 sm:min-h-[90svh]"
@@ -65,7 +63,7 @@ export default function Home() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/55 sm:bg-night/50" />
+        <div className="absolute inset-0 bg-night/55" />
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
@@ -78,54 +76,58 @@ export default function Home() {
             </h2>
           </Reveal>
           <Reveal delayMs={200}>
-            <p className="mx-auto mt-8 max-w-lg text-lg leading-relaxed text-ivory/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)]">
+            <p className="mx-auto mt-8 max-w-lg text-lg leading-relaxed text-ivory/90">
               {wedding.inviteBody}
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* Foto balcón — pareja bien visible */}
-      <section className="relative min-h-[75svh] overflow-hidden sm:min-h-[85svh]">
+      {/* Foto balcón — encuadre correcto de la pareja */}
+      <section className="relative min-h-[70svh] overflow-hidden sm:min-h-[80svh]">
         <Image
-          src={wedding.photos.balcony}
+          src={wedding.photos.balconySection}
           alt="Daniel y Manuela en el balcón"
           fill
           unoptimized
-          className="object-cover object-[center_42%] sm:object-[center_40%]"
+          className="object-cover object-center"
           sizes="100vw"
         />
       </section>
 
-      {/* Nuestra boda — texto sobre sección del mural */}
+      {/* Detalles — fondo elegante (mejor legibilidad que el mural) */}
       <section
         id="detalles"
-        className="relative flex min-h-[90svh] items-center justify-center overflow-hidden py-24 sm:min-h-[95svh]"
+        className="relative overflow-hidden px-6 py-24 sm:py-32"
       >
-        <Image
-          src="/media/couple/mural-section.jpg"
-          alt="Daniel y Manuela"
-          fill
-          unoptimized
-          className="object-cover object-[center_62%] sm:object-[center_60%]"
-          sizes="100vw"
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 0%, rgba(196,165,116,0.12), transparent 50%), radial-gradient(ellipse at 80% 100%, rgba(61,82,72,0.25), transparent 45%)",
+          }}
         />
-        <div className="absolute inset-0 bg-night/60" />
-        <div className="relative z-10 mx-auto w-full max-w-xl px-6 text-center text-ivory">
+        <div className="film-grain opacity-[0.04]" />
+        <div className="relative z-10 mx-auto w-full max-w-xl text-center text-ivory">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
               {wedding.sectionTitle}
             </p>
           </Reveal>
           <Reveal delayMs={80}>
-            <h2 className="mt-5 font-script text-5xl drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)] sm:text-6xl">
+            <h2 className="mt-5 font-script text-5xl sm:text-6xl">
               Te esperamos
             </h2>
           </Reveal>
-          <Reveal delayMs={160}>
-            <dl className="mx-auto mt-12 space-y-7">
+
+          <Reveal delayMs={140}>
+            <div className="gold-rule mx-auto mt-10" />
+          </Reveal>
+
+          <Reveal delayMs={180}>
+            <dl className="mx-auto mt-12 space-y-9">
               <div>
-                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
+                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne">
                   Fecha
                 </dt>
                 <dd className="mt-2 font-display text-2xl tracking-wide">
@@ -133,7 +135,7 @@ export default function Home() {
                 </dd>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
+                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne">
                   Hora
                 </dt>
                 <dd className="mt-2 font-display text-2xl tracking-wide">
@@ -141,25 +143,56 @@ export default function Home() {
                 </dd>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
+                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne">
                   Lugar
                 </dt>
                 <dd className="mt-2 font-display text-xl leading-snug tracking-wide sm:text-2xl">
                   {wedding.venue}
                 </dd>
-                <dd className="mt-1 text-sm text-ivory/70">
+                <dd className="mt-1 text-sm text-ivory/65">
                   {wedding.venueCity}
                 </dd>
+                {wedding.mapsUrl ? (
+                  <a
+                    href={wedding.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block border-b border-champagne/50 pb-0.5 text-sm tracking-[0.12em] text-champagne transition hover:border-champagne"
+                  >
+                    Ver ubicación en Maps
+                  </a>
+                ) : null}
               </div>
             </dl>
           </Reveal>
+
           <Reveal delayMs={260}>
-            <div className="mx-auto mt-12 max-w-xs space-y-2 border-t border-ivory/25 pt-10 text-[11px] uppercase tracking-[0.25em] text-ivory/90">
+            <div className="mx-auto mt-14 max-w-xs space-y-2 border-t border-ivory/20 pt-10 text-[11px] uppercase tracking-[0.25em] text-ivory/85">
               <p>{wedding.dressCode}</p>
               <p>{wedding.giftNote}</p>
             </div>
           </Reveal>
+
+          <Reveal delayMs={320}>
+            <p className="mx-auto mt-12 max-w-sm font-display text-base leading-relaxed text-champagne/90 sm:text-lg">
+              Confirma tu asistencia
+              <br />
+              <span className="text-ivory/80">hasta el 31 de octubre</span>
+            </p>
+          </Reveal>
         </div>
+      </section>
+
+      {/* Momento mural — solo foto, sin texto encima */}
+      <section className="relative min-h-[75svh] overflow-hidden sm:min-h-[85svh]">
+        <Image
+          src={wedding.photos.muralSection}
+          alt="Daniel y Manuela"
+          fill
+          unoptimized
+          className="object-cover object-[center_60%]"
+          sizes="100vw"
+        />
       </section>
 
       {/* Versículo */}
@@ -169,10 +202,10 @@ export default function Home() {
           alt=""
           fill
           unoptimized
-          className="object-cover object-center"
+          className="object-cover object-[center_35%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/70" />
+        <div className="absolute inset-0 bg-night/65" />
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center text-ivory">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.4em] text-champagne">
