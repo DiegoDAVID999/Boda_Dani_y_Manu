@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Countdown } from "@/components/countdown";
 import { Reveal } from "@/components/reveal";
-import { RsvpForm } from "@/components/rsvp-form";
 import { wedding } from "@/lib/wedding";
 
 export default function Home() {
