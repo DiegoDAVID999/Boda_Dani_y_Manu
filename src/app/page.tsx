@@ -200,39 +200,6 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-night/40 to-transparent" />
       </section>
 
-      {/* RSVP */}
-      <section
-        id="rsvp"
-        className="relative overflow-hidden bg-night px-6 py-24 sm:py-32"
-      >
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 0%, rgba(196,165,116,0.14), transparent 55%)",
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-3xl">
-          <Reveal>
-            <div className="mb-12 text-center">
-              <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
-                Confirmación
-              </p>
-              <h2 className="mt-4 font-script text-5xl text-ivory sm:text-6xl">
-                ¿Nos acompañas?
-              </h2>
-              <p className="mx-auto mt-4 max-w-md text-ivory/70">
-                Tu presencia es un regalo. Confirma y celebra con nosotros este
-                pacto delante de Dios.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delayMs={120}>
-            <RsvpForm />
-          </Reveal>
-        </div>
-      </section>
-
       {/* Cierre */}
       <section className="relative flex min-h-[55svh] items-center justify-center overflow-hidden py-20">
         <Image
