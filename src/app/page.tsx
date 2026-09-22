@@ -98,33 +98,35 @@ export default function Home() {
         />
       </section>
 
-      {/* Nuestra boda — detalles (sin tapar la foto) */}
+      {/* Nuestra boda — texto sobre sección del mural */}
       <section
         id="detalles"
-        className="relative overflow-hidden bg-night px-6 py-24 sm:py-28"
+        className="relative flex min-h-[90svh] items-center justify-center overflow-hidden py-24 sm:min-h-[95svh]"
       >
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 70% 20%, rgba(196,165,116,0.08), transparent 50%)",
-          }}
+        <Image
+          src="/media/couple/mural-section.jpg"
+          alt="Daniel y Manuela"
+          fill
+          unoptimized
+          className="object-cover object-[center_45%]"
+          sizes="100vw"
         />
-        <div className="relative z-10 mx-auto w-full max-w-xl text-center text-ivory">
+        <div className="absolute inset-0 bg-night/60" />
+        <div className="relative z-10 mx-auto w-full max-w-xl px-6 text-center text-ivory">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
               {wedding.sectionTitle}
             </p>
           </Reveal>
           <Reveal delayMs={80}>
-            <h2 className="mt-5 font-script text-5xl sm:text-6xl">
+            <h2 className="mt-5 font-script text-5xl drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)] sm:text-6xl">
               Te esperamos
             </h2>
           </Reveal>
           <Reveal delayMs={160}>
             <dl className="mx-auto mt-12 space-y-7">
               <div>
-                <dt className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">
+                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
                   Fecha
                 </dt>
                 <dd className="mt-2 font-display text-2xl tracking-wide">
@@ -132,7 +134,7 @@ export default function Home() {
                 </dd>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">
+                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
                   Hora
                 </dt>
                 <dd className="mt-2 font-display text-2xl tracking-wide">
@@ -140,37 +142,25 @@ export default function Home() {
                 </dd>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">
+                <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
                   Lugar
                 </dt>
                 <dd className="mt-2 font-display text-xl leading-snug tracking-wide sm:text-2xl">
                   {wedding.venue}
                 </dd>
-                <dd className="mt-1 text-sm text-ivory/65">
+                <dd className="mt-1 text-sm text-ivory/70">
                   {wedding.venueCity}
                 </dd>
               </div>
             </dl>
           </Reveal>
           <Reveal delayMs={260}>
-            <div className="mx-auto mt-12 max-w-xs space-y-2 border-t border-ivory/20 pt-10 text-[11px] uppercase tracking-[0.25em] text-ivory/85">
+            <div className="mx-auto mt-12 max-w-xs space-y-2 border-t border-ivory/25 pt-10 text-[11px] uppercase tracking-[0.25em] text-ivory/90">
               <p>{wedding.dressCode}</p>
               <p>{wedding.giftNote}</p>
             </div>
           </Reveal>
         </div>
-      </section>
-
-      {/* Foto mural */}
-      <section className="relative min-h-[75svh] overflow-hidden sm:min-h-[85svh]">
-        <Image
-          src={wedding.photos.mural}
-          alt="Daniel y Manuela"
-          fill
-          unoptimized
-          className="object-cover object-[center_25%]"
-          sizes="100vw"
-        />
       </section>
 
       {/* Versículo */}
