@@ -219,23 +219,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Cierre */}
-      <section className="relative flex min-h-[55svh] items-center justify-center overflow-hidden py-20">
+      {/* Cierre — recorte del mural en alta calidad */}
+      <section className="relative flex min-h-[60svh] items-center justify-center overflow-hidden py-20 sm:min-h-[65svh]">
         <Image
-          src={wedding.heroImageDesktop}
-          alt=""
+          src="/media/couple/closing.jpg"
+          alt={wedding.namesDisplay}
           fill
           unoptimized
-          className="object-cover object-[center_28%]"
+          className="object-cover object-[center_42%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/55" />
+        <div className="absolute inset-0 bg-night/50" />
         <div className="relative z-10 px-6 text-center">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
               Con cariño
             </p>
-            <h2 className="mt-4 font-script text-[clamp(3rem,12vw,6.5rem)] leading-none text-ivory">
+            <h2 className="mt-4 font-script text-[clamp(3rem,12vw,6.5rem)] leading-none text-ivory drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
               {wedding.namesDisplay}
             </h2>
             <div className="gold-rule mx-auto mt-8" />
