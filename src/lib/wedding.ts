@@ -21,9 +21,7 @@ export const wedding = {
 
   venue: "2 km Vía al aeropuerto",
   venueCity: "Autopista Medellín – Bogotá",
-  /** Pega aquí el link de Google Maps que te pasaron */
-  mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=2+km+V%C3%ADa+al+aeropuerto+autopista+Medell%C3%ADn+Bogot%C3%A1",
+  mapsUrl: "https://maps.app.goo.gl/hmmH1CmjiX8HHfZr8",
 
   dressCode: "Dress code — Formal",
   giftNote: "Lluvia de sobres",
