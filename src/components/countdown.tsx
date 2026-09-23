@@ -40,7 +40,7 @@ export function Countdown() {
 
   return (
     <div
-      className="mx-auto grid max-w-lg grid-cols-4 gap-1.5 xs:gap-2 sm:gap-6"
+      className="mx-auto grid max-w-lg grid-cols-4 gap-1.5 sm:gap-6"
       aria-label="Cuenta regresiva"
     >
       {items.map((item) => (
