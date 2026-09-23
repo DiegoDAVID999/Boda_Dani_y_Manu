@@ -95,27 +95,28 @@ export default function Home() {
         />
       </section>
 
-      {/* Detalles — fondo elegante (mejor legibilidad que el mural) */}
+      {/* Detalles — info sobre foto de las escaleras */}
       <section
         id="detalles"
-        className="relative overflow-hidden px-6 py-24 sm:py-32"
+        className="relative flex min-h-[100svh] items-center justify-center overflow-hidden py-24"
       >
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 0%, rgba(196,165,116,0.12), transparent 50%), radial-gradient(ellipse at 80% 100%, rgba(61,82,72,0.25), transparent 45%)",
-          }}
+        <Image
+          src="/media/couple/stairs-details.jpg"
+          alt="Daniel y Manuela"
+          fill
+          unoptimized
+          className="object-cover object-[center_48%] sm:object-[center_45%]"
+          sizes="100vw"
         />
-        <div className="film-grain opacity-[0.04]" />
-        <div className="relative z-10 mx-auto w-full max-w-xl text-center text-ivory">
+        <div className="absolute inset-0 bg-gradient-to-b from-night/50 via-night/55 to-night/70" />
+        <div className="relative z-10 mx-auto w-full max-w-xl px-6 text-center text-ivory">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
               {wedding.sectionTitle}
             </p>
           </Reveal>
           <Reveal delayMs={80}>
-            <h2 className="mt-5 font-script text-5xl sm:text-6xl">
+            <h2 className="mt-5 font-script text-5xl drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)] sm:text-6xl">
               Te esperamos
             </h2>
           </Reveal>
@@ -130,7 +131,7 @@ export default function Home() {
                 <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne">
                   Fecha
                 </dt>
-                <dd className="mt-2 font-display text-2xl tracking-wide">
+                <dd className="mt-2 font-display text-2xl tracking-wide drop-shadow-sm">
                   {wedding.dateLabel}
                 </dd>
               </div>
@@ -138,7 +139,7 @@ export default function Home() {
                 <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne">
                   Hora
                 </dt>
-                <dd className="mt-2 font-display text-2xl tracking-wide">
+                <dd className="mt-2 font-display text-2xl tracking-wide drop-shadow-sm">
                   {wedding.timeLabel}
                 </dd>
               </div>
@@ -146,10 +147,10 @@ export default function Home() {
                 <dt className="text-[10px] uppercase tracking-[0.3em] text-champagne">
                   Lugar
                 </dt>
-                <dd className="mt-2 font-display text-xl leading-snug tracking-wide sm:text-2xl">
+                <dd className="mt-2 font-display text-xl leading-snug tracking-wide drop-shadow-sm sm:text-2xl">
                   {wedding.venue}
                 </dd>
-                <dd className="mt-1 text-sm text-ivory/65">
+                <dd className="mt-1 text-sm text-ivory/75">
                   {wedding.venueCity}
                 </dd>
                 {wedding.mapsUrl ? (
@@ -167,17 +168,17 @@ export default function Home() {
           </Reveal>
 
           <Reveal delayMs={260}>
-            <div className="mx-auto mt-14 max-w-xs space-y-2 border-t border-ivory/20 pt-10 text-[11px] uppercase tracking-[0.25em] text-ivory/85">
+            <div className="mx-auto mt-14 max-w-xs space-y-2 border-t border-ivory/25 pt-10 text-[11px] uppercase tracking-[0.25em] text-ivory/90">
               <p>{wedding.dressCode}</p>
               <p>{wedding.giftNote}</p>
             </div>
           </Reveal>
 
           <Reveal delayMs={320}>
-            <p className="mx-auto mt-12 max-w-sm font-display text-base leading-relaxed text-champagne/90 sm:text-lg">
+            <p className="mx-auto mt-12 max-w-sm font-display text-base leading-relaxed text-champagne/95 sm:text-lg">
               Confirma tu asistencia
               <br />
-              <span className="text-ivory/80">hasta el 31 de octubre</span>
+              <span className="text-ivory/85">hasta el 31 de octubre</span>
             </p>
           </Reveal>
         </div>
@@ -196,17 +197,15 @@ export default function Home() {
       </section>
 
       {/* Versículo */}
-      <section className="relative flex min-h-[80svh] items-center overflow-hidden py-24">
-        <Image
-          src={wedding.photos.stairs}
-          alt=""
-          fill
-          unoptimized
-          className="object-cover object-[center_35%]"
-          sizes="100vw"
+      <section className="relative overflow-hidden bg-night px-6 py-24 sm:py-32">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 30%, rgba(196,165,116,0.1), transparent 55%)",
+          }}
         />
-        <div className="absolute inset-0 bg-night/65" />
-        <div className="relative z-10 mx-auto max-w-2xl px-6 text-center text-ivory">
+        <div className="relative z-10 mx-auto max-w-2xl text-center text-ivory">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.4em] text-champagne">
               {wedding.verseRef}
