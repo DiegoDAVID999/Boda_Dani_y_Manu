@@ -83,18 +83,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Balcón */}
-      <section className="relative aspect-[3/4] w-full overflow-hidden sm:aspect-auto sm:min-h-[80svh]">
-        <Image
-          src={wedding.photos.balconySection}
-          alt="Daniel y Manuela en el balcón"
-          fill
-          unoptimized
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-      </section>
-
       {/* Detalles: en móvil foto + info debajo; en desktop overlay */}
       <section id="detalles" className="relative bg-night">
         <div className="relative aspect-[3/4] w-full overflow-hidden sm:hidden">
@@ -195,23 +183,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Versículo */}
-      <section className="relative overflow-hidden bg-night px-5 py-14 sm:px-8 sm:py-32">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 30%, rgba(196,165,116,0.1), transparent 55%)",
-          }}
+      {/* Versículo sobre balcón */}
+      <section className="relative flex min-h-[70svh] items-center justify-center overflow-hidden px-5 py-16 sm:min-h-[80svh] sm:px-8 sm:py-28">
+        <Image
+          src={wedding.photos.balconySection}
+          alt=""
+          fill
+          unoptimized
+          className="object-cover object-[center_38%] sm:object-[center_42%]"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/55 via-night/45 to-night/65" />
         <div className="relative z-10 mx-auto max-w-2xl text-center text-ivory">
           <Reveal>
-            <p className="text-[10px] uppercase tracking-[0.32em] text-champagne sm:text-[11px] sm:tracking-[0.4em]">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-champagne drop-shadow-sm sm:text-[11px] sm:tracking-[0.4em]">
               {wedding.verseRef}
             </p>
           </Reveal>
           <Reveal delayMs={120}>
-            <blockquote className="mt-5 font-display text-[clamp(1.25rem,5.2vw,2.6rem)] leading-snug sm:mt-8">
+            <blockquote className="mt-5 font-display text-[clamp(1.25rem,5.2vw,2.6rem)] leading-snug drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)] sm:mt-8">
               «{wedding.verseText}»
             </blockquote>
           </Reveal>
