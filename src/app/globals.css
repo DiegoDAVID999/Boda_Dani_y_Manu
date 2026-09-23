@@ -101,11 +101,17 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-night text-ivory antialiased;
-  }
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-night text-ivory antialiased;
+    overscroll-behavior-x: none;
+  }
+  img {
+    max-width: 100%;
   }
 }
 

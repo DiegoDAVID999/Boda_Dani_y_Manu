@@ -40,15 +40,15 @@ export function Countdown() {
 
   return (
     <div
-      className="mx-auto grid max-w-lg grid-cols-4 gap-3 sm:gap-6"
+      className="mx-auto grid max-w-lg grid-cols-4 gap-1.5 xs:gap-2 sm:gap-6"
       aria-label="Cuenta regresiva"
     >
       {items.map((item) => (
         <div key={item.label} className="text-center">
-          <div className="font-display text-3xl font-medium tracking-wide text-ivory sm:text-4xl">
+          <div className="font-display text-[1.35rem] font-medium tracking-wide text-ivory sm:text-4xl">
             {String(item.value).padStart(2, "0")}
           </div>
-          <div className="mt-1 text-[10px] uppercase tracking-[0.28em] text-ivory/55">
+          <div className="mt-0.5 text-[8px] uppercase tracking-[0.18em] text-ivory/55 sm:mt-1 sm:text-[10px] sm:tracking-[0.28em]">
             {item.label}
           </div>
         </div>

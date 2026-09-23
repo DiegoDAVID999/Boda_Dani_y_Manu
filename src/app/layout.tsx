@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Cormorant_Garamond,
   Great_Vibes,
@@ -36,13 +36,22 @@ export const metadata: Metadata = {
   description: `${wedding.inviteLead} ${wedding.inviteBody}`,
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#121916",
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
       className={`${cormorant.variable} ${greatVibes.variable} ${lora.variable} ${geistMono.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col font-body">{children}</body>
+      <body className="flex min-h-full flex-col overflow-x-hidden font-body antialiased">
+        {children}
+      </body>
     </html>
   );
 }
