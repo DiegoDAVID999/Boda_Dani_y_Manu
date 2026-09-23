@@ -105,7 +105,7 @@ export default function Home() {
           alt="Daniel y Manuela"
           fill
           unoptimized
-          className="object-cover object-[center_48%] sm:object-[center_45%]"
+          className="object-cover object-[center_62%] sm:object-[center_58%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-night/50 via-night/55 to-night/70" />
