@@ -226,10 +226,10 @@ export default function Home() {
           alt={wedding.namesDisplay}
           fill
           unoptimized
-          className="object-cover object-[center_48%] sm:object-[center_45%]"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/50" />
+        <div className="absolute inset-0 bg-night/45" />
         <div className="relative z-10 px-6 text-center">
           <Reveal>
             <p className="text-[11px] uppercase tracking-[0.45em] text-champagne">
