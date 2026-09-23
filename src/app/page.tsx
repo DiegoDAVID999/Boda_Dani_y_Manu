@@ -67,7 +67,7 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-2xl px-5 text-center sm:px-8">
           <Reveal>
             <p className="text-[10px] uppercase tracking-[0.38em] text-champagne sm:text-[11px] sm:tracking-[0.45em]">
-              Matrimonio cristiano
+              Nuestra boda
             </p>
           </Reveal>
           <Reveal delayMs={100}>
@@ -244,7 +244,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-moss/40 bg-night px-5 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center text-[11px] tracking-wide text-ivory/40 sm:px-8 sm:py-8 sm:text-xs">
-        {wedding.namesDisplay} · {wedding.dateShort} · Con la promesa de Dios
+        {wedding.namesDisplay} · {wedding.dateShort} · Con la bendición de Dios
       </footer>
     </main>
   );
