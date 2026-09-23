@@ -195,18 +195,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mural */}
-      <section className="relative aspect-[3/4] w-full overflow-hidden sm:aspect-auto sm:min-h-[85svh]">
-        <Image
-          src={wedding.photos.muralSection}
-          alt="Daniel y Manuela"
-          fill
-          unoptimized
-          className="object-cover object-[center_55%] sm:object-[center_60%]"
-          sizes="100vw"
-        />
-      </section>
-
       {/* Versículo */}
       <section className="relative overflow-hidden bg-night px-5 py-14 sm:px-8 sm:py-32">
         <div
