@@ -2,7 +2,7 @@
 
 Invitación web para el matrimonio cristiano de Daniel y Manuela.
 
-**26 de diciembre de 2026 · 4:00 PM**  
+**19 de diciembre de 2026 · 4:00 PM**  
 2 km Vía al aeropuerto, autopista Medellín–Bogotá
 
 ## Cómo verla
