@@ -199,13 +199,13 @@ export default function Home() {
       </section>
 
       {/* Cierre */}
-      <section className="relative flex min-h-[58svh] items-center justify-center overflow-hidden py-14 sm:min-h-[65svh] sm:py-20">
+      <section className="relative flex min-h-[70svh] items-start justify-center overflow-hidden pt-16 sm:min-h-[75svh] sm:items-center sm:pt-20 sm:pb-20">
         <Image
           src="/media/couple/closing-mobile.jpg"
           alt={wedding.namesDisplay}
           fill
           unoptimized
-          className="object-cover object-[center_40%] sm:hidden"
+          className="object-cover object-[center_72%] sm:hidden"
           sizes="100vw"
         />
         <Image
@@ -213,10 +213,10 @@ export default function Home() {
           alt=""
           fill
           unoptimized
-          className="hidden object-cover object-center sm:block"
+          className="hidden object-cover object-[center_68%] sm:block"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/55 via-night/25 to-transparent" />
         <div className="relative z-10 px-5 pb-[env(safe-area-inset-bottom)] text-center sm:px-8">
           <Reveal>
             <p className="text-[10px] uppercase tracking-[0.38em] text-champagne sm:text-[11px] sm:tracking-[0.45em]">
