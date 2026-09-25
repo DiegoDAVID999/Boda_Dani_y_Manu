@@ -1,6 +1,6 @@
 /**
  * Invitación — Daniel & Manuela
- * Matrimonio cristiano · 26.12.2026
+ * Matrimonio cristiano · 19.12.2026
  */
 export const wedding = {
   groom: "Daniel",
@@ -14,9 +14,9 @@ export const wedding = {
   inviteBody:
     "Y queremos que hagas parte del cumplimiento de una de ellas.",
 
-  dateISO: "2026-12-26T16:00:00-05:00",
-  dateLabel: "26 · Diciembre · 2026",
-  dateShort: "26.12.26",
+  dateISO: "2026-12-19T16:00:00-05:00",
+  dateLabel: "19 · Diciembre · 2026",
+  dateShort: "19.12.26",
   timeLabel: "4:00 PM",
 
   venue: "2 km Vía al aeropuerto",
