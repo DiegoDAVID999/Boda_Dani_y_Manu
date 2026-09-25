@@ -34,6 +34,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: `${wedding.namesDisplay} | Nuestra boda`,
   description: `${wedding.inviteLead} ${wedding.inviteBody}`,
+  applicationName: wedding.namesDisplay,
 };
 
 export const viewport: Viewport = {
