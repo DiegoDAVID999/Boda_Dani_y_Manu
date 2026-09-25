@@ -83,103 +83,93 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Detalles: en móvil foto + info debajo; en desktop overlay */}
-      <section id="detalles" className="relative bg-night">
-        <div className="relative aspect-[3/4] w-full overflow-hidden sm:hidden">
-          <Image
-            src="/media/couple/stairs-details.jpg"
-            alt="Daniel y Manuela"
-            fill
-            unoptimized
-            className="object-cover object-[center_42%]"
-            sizes="100vw"
-          />
-        </div>
+      {/* Detalles — foto de fondo + texto encima (móvil y desktop) */}
+      <section
+        id="detalles"
+        className="relative flex min-h-[100svh] min-h-[100dvh] items-center justify-center overflow-hidden px-5 py-16 sm:px-8 sm:py-24"
+      >
+        <Image
+          src="/media/couple/stairs-details.jpg"
+          alt="Daniel y Manuela"
+          fill
+          unoptimized
+          className="object-cover object-[center_42%] sm:object-[center_52%]"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/60 via-night/55 to-night/75" />
 
-        <div className="relative overflow-hidden px-5 py-14 sm:flex sm:min-h-[100svh] sm:items-center sm:justify-center sm:px-8 sm:py-24">
-          <Image
-            src="/media/couple/stairs-details.jpg"
-            alt=""
-            fill
-            unoptimized
-            className="hidden object-cover object-[center_52%] sm:block"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 hidden bg-gradient-to-b from-night/50 via-night/55 to-night/70 sm:block" />
+        <div className="relative z-10 mx-auto w-full max-w-xl text-center text-ivory">
+          <Reveal>
+            <p className="text-[10px] uppercase tracking-[0.38em] text-champagne sm:text-[11px] sm:tracking-[0.45em]">
+              {wedding.sectionTitle}
+            </p>
+          </Reveal>
+          <Reveal delayMs={80}>
+            <h2 className="mt-3 font-script text-[2.6rem] drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)] sm:mt-5 sm:text-6xl">
+              Te esperamos
+            </h2>
+          </Reveal>
 
-          <div className="relative z-10 mx-auto w-full max-w-xl text-center text-ivory">
-            <Reveal>
-              <p className="text-[10px] uppercase tracking-[0.38em] text-champagne sm:text-[11px] sm:tracking-[0.45em]">
-                {wedding.sectionTitle}
-              </p>
-            </Reveal>
-            <Reveal delayMs={80}>
-              <h2 className="mt-3 font-script text-[2.6rem] drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)] sm:mt-5 sm:text-6xl">
-                Te esperamos
-              </h2>
-            </Reveal>
+          <Reveal delayMs={140}>
+            <div className="gold-rule mx-auto mt-7 sm:mt-10" />
+          </Reveal>
 
-            <Reveal delayMs={140}>
-              <div className="gold-rule mx-auto mt-7 sm:mt-10" />
-            </Reveal>
-
-            <Reveal delayMs={180}>
-              <dl className="mx-auto mt-9 space-y-6 sm:mt-12 sm:space-y-9">
-                <div>
-                  <dt className="text-[10px] uppercase tracking-[0.28em] text-champagne">
-                    Fecha
-                  </dt>
-                  <dd className="mt-1.5 font-display text-xl tracking-wide drop-shadow-sm sm:mt-2 sm:text-2xl">
-                    {wedding.dateLabel}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[10px] uppercase tracking-[0.28em] text-champagne">
-                    Hora
-                  </dt>
-                  <dd className="mt-1.5 font-display text-xl tracking-wide drop-shadow-sm sm:mt-2 sm:text-2xl">
-                    {wedding.timeLabel}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[10px] uppercase tracking-[0.28em] text-champagne">
-                    Lugar
-                  </dt>
-                  <dd className="mt-1.5 font-display text-lg leading-snug tracking-wide drop-shadow-sm sm:mt-2 sm:text-2xl">
-                    {wedding.venue}
-                  </dd>
-                  <dd className="mt-1 text-sm leading-snug text-ivory/75">
-                    {wedding.venueCity}
-                  </dd>
-                  {wedding.mapsUrl ? (
-                    <a
-                      href={wedding.mapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-flex min-h-12 touch-manipulation items-center justify-center border border-champagne/45 px-5 text-sm tracking-[0.12em] text-champagne transition hover:border-champagne hover:bg-champagne/10"
-                    >
-                      Ver ubicación en Maps
-                    </a>
-                  ) : null}
-                </div>
-              </dl>
-            </Reveal>
-
-            <Reveal delayMs={260}>
-              <div className="mx-auto mt-10 max-w-xs space-y-2 border-t border-ivory/25 pt-7 text-[10px] uppercase tracking-[0.2em] text-ivory/90 sm:mt-14 sm:pt-10 sm:text-[11px] sm:tracking-[0.25em]">
-                <p>{wedding.dressCode}</p>
-                <p>{wedding.giftNote}</p>
+          <Reveal delayMs={180}>
+            <dl className="mx-auto mt-9 space-y-6 sm:mt-12 sm:space-y-9">
+              <div>
+                <dt className="text-[10px] uppercase tracking-[0.28em] text-champagne">
+                  Fecha
+                </dt>
+                <dd className="mt-1.5 font-display text-xl tracking-wide drop-shadow-sm sm:mt-2 sm:text-2xl">
+                  {wedding.dateLabel}
+                </dd>
               </div>
-            </Reveal>
+              <div>
+                <dt className="text-[10px] uppercase tracking-[0.28em] text-champagne">
+                  Hora
+                </dt>
+                <dd className="mt-1.5 font-display text-xl tracking-wide drop-shadow-sm sm:mt-2 sm:text-2xl">
+                  {wedding.timeLabel}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase tracking-[0.28em] text-champagne">
+                  Lugar
+                </dt>
+                <dd className="mt-1.5 font-display text-lg leading-snug tracking-wide drop-shadow-sm sm:mt-2 sm:text-2xl">
+                  {wedding.venue}
+                </dd>
+                <dd className="mt-1 text-sm leading-snug text-ivory/75">
+                  {wedding.venueCity}
+                </dd>
+                {wedding.mapsUrl ? (
+                  <a
+                    href={wedding.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex min-h-12 touch-manipulation items-center justify-center border border-champagne/45 px-5 text-sm tracking-[0.12em] text-champagne transition hover:border-champagne hover:bg-champagne/10"
+                  >
+                    Ver ubicación en Maps
+                  </a>
+                ) : null}
+              </div>
+            </dl>
+          </Reveal>
 
-            <Reveal delayMs={320}>
-              <p className="mx-auto mt-9 max-w-sm font-display text-base leading-relaxed text-champagne/95 sm:mt-12 sm:text-lg">
-                Confirma tu asistencia
-                <br />
-                <span className="text-ivory/85">hasta el 31 de octubre</span>
-              </p>
-            </Reveal>
-          </div>
+          <Reveal delayMs={260}>
+            <div className="mx-auto mt-10 max-w-xs space-y-2 border-t border-ivory/25 pt-7 text-[10px] uppercase tracking-[0.2em] text-ivory/90 sm:mt-14 sm:pt-10 sm:text-[11px] sm:tracking-[0.25em]">
+              <p>{wedding.dressCode}</p>
+              <p>{wedding.giftNote}</p>
+            </div>
+          </Reveal>
+
+          <Reveal delayMs={320}>
+            <p className="mx-auto mt-9 max-w-sm font-display text-base leading-relaxed text-champagne/95 sm:mt-12 sm:text-lg">
+              Confirma tu asistencia
+              <br />
+              <span className="text-ivory/85">hasta el 31 de octubre</span>
+            </p>
+          </Reveal>
         </div>
       </section>
 
